@@ -1,0 +1,22 @@
+<body>
+  <div class="container">
+    <header>
+        <h1>ToDo</h1><p>See all the tasks and ADD or REMOVE your task</p>
+        {{> loginButtons}}
+
+        {{#if currentUser}}
+        <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+        <input type="submit" value="Add Task">
+      </form>
+      {{/if}}
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{>task}}
+      {{/each}}
+      </ul>
+
+  </div>
+</body>
